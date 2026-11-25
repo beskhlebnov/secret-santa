@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b241d">
+  <title>Тайный Санта — праздник начинается</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">✦</span><span>Тайный <b>Санта</b></span></a>
+    <div id="accountArea" class="account-area"></div>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow">НОВОГОДНЯЯ ТРАДИЦИЯ</div><h1>Подарки, сюрпризы<br>и немного <em>магии</em></h1>
+        <p>Организуйте Тайного Санту для друзей, семьи или коллег. Добавляйте пожелания, проводите честную жеребьёвку и сохраняйте интригу.</p>
+        <div class="hero-pills"><span>❄ Бесплатно</span><span>🎁 Тайная жеребьёвка</span><span>📱 Для всех устройств</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="glow"></div><div class="gift gift-big"><div class="ribbon-v"></div><div class="ribbon-h"></div><div class="bow">∞</div></div><div class="gift gift-small"><div class="ribbon-v"></div><div class="ribbon-h"></div></div><div class="star star1">✦</div><div class="star star2">✧</div><div class="star star3">✦</div></div>
+    </section>
+    <section id="authPanel" class="panel auth-panel">
+      <div class="panel-head"><div><div class="eyebrow">ВАШ АККАУНТ</div><h2>Войти или зарегистрироваться</h2></div></div>
+      <p class="muted">Чтобы участвовать в игре и видеть своего получателя, войдите по электронной почте.</p>
+      <div class="auth-grid"><label>Email<input id="email" type="email" autocomplete="email" placeholder="you@example.com"></label><label>Пароль<input id="password" type="password" autocomplete="current-password" placeholder="Не менее 6 символов"></label></div>
+      <div class="button-row"><button id="loginBtn" class="btn btn-primary">Войти</button><button id="signupBtn" class="btn btn-secondary">Создать аккаунт</button></div><div id="authMessage" class="message"></div>
+    </section>
+    <section id="appPanel" class="hidden">
+      <div class="dashboard-grid">
+        <section class="panel create-panel"><div class="eyebrow">НОВАЯ ИГРА</div><h2>Создать Тайного Санту</h2><p class="muted">Создайте игру и поделитесь кодом с участниками.</p><label>Название игры<input id="newGameName" placeholder="Например, Новый год 2026"></label><label>Бюджет подарка<input id="newGameBudget" placeholder="Например, 1500 ₽"></label><button id="createGameBtn" class="btn btn-primary full">Создать игру</button></section>
+        <section class="panel join-panel"><div class="eyebrow">УЖЕ ЕСТЬ ИГРА?</div><h2>Присоединиться</h2><p class="muted">Введите код, который прислал организатор.</p><label>Код игры<input id="joinCode" placeholder="Например, SANTA-AB12" maxlength="20"></label><label>Ваше имя<input id="joinName" placeholder="Как вас будут видеть участники"></label><button id="joinBtn" class="btn btn-secondary full">Вступить в игру</button></section>
+      </div>
+      <section class="panel games-panel"><div class="panel-head"><div><div class="eyebrow">ВАШИ ИГРЫ</div><h2>Игры и участники</h2></div><button id="refreshBtn" class="btn btn-ghost">↻ Обновить</button></div><div id="gamesList" class="games-list"><div class="empty-state">Здесь появятся ваши игры.</div></div></section>
+      <section id="gameDetails" class="panel hidden"></section>
+      <section class="panel ideas-panel"><div class="panel-head"><div><div class="eyebrow">ВДОХНОВЕНИЕ</div><h2>Генератор подарков</h2></div></div><p class="muted">Выберите категорию и бюджет — получите несколько идей.</p><div class="ideas-controls"><label>Категория<select id="giftCategory"><option value="any">Любая</option><option value="cozy">Уют</option><option value="food">Еда и напитки</option><option value="hobby">Хобби</option><option value="tech">Технологии</option><option value="fun">Прикольные подарки</option><option value="personal">Для себя</option></select></label><label>Бюджет<select id="giftBudget"><option value="any">Любой</option><option value="low">До 500 ₽</option><option value="mid">500–1500 ₽</option><option value="high">1500–3000 ₽</option></select></label><button id="generateBtn" class="btn btn-primary">Подобрать идеи</button></div><div id="giftIdeas" class="gift-ideas"></div></section>
+    </section>
+    <section class="privacy-note"><span>🔒</span><p>Пожелания видны только самому участнику и тому, кто дарит ему подарок. Результаты жеребьёвки скрыты от остальных участников.</p></section>
+  </main>
+  <footer>Сделано для тёплых праздников · <span>Тайный Санта</span></footer>
+  <div id="toast" class="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script><script src="js/gifts.js"></script><script src="js/app.js"></script>
+</body>
+</html>
